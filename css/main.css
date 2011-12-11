@@ -1,0 +1,144 @@
+body {
+  margin: 50px auto;
+  width: 700px;
+  font-size: 13px;
+}
+
+a {
+  color: #019AD2;
+}
+
+header {
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 80px;
+  font-size: 24px;
+}
+
+header #twitter-recent-tweet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px;
+  width: 403px;
+  height: 60px;
+}
+
+header #twitter-id,
+header #twitter-tweet {
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+header #twitter-id {
+  width: 403px;
+  text-indent: 48px;
+}
+
+header #twitter-id img {
+  display: block;
+  position: absolute;
+}
+
+header #twitter-tweet {
+  top: 30px;
+  left: 63px;
+  width: 35em;
+  height: 4em;
+  font-size: 9px;
+}
+
+header menu {
+  margin: 0;
+  padding: 0;
+  list-style: none outside;
+  background-color: #0084B4;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+header menu li {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+header menu li a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0084B4;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+header menu li a:hover {
+  background-color: #2D2D2D;
+}
+
+footer {
+}
+
+footer address {
+  font-style: normal;
+  text-align: center;
+}
+
+footer address a {
+  text-decoration: none;
+  color: #0084B4;
+}
+
+footer address a+a {
+  padding-left: 0.3em;
+  border-left: 1px solid #0084B4;
+}
+
+section#body {
+  padding: 30px;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+section.repository h2 small {
+  display: block;
+  font-size: 9px;
+}
+
+section.repository dl {
+  font-size: 9px;
+  text-align: right;
+}
+
+section.repository dl dt,
+section.repository dl dd {
+  display: inline-block;
+  margin: 0;
+  padding: 3px 5px;
+  color: #0084B4;
+  background-color: whiteSmoke;
+}
+
+section.repository dl dt {
+  margin-right: 1px;
+  border-radius: 3px 0 0 3px;
+}
+
+section.repository dl dd {
+  margin-right: 10px;
+  border-radius: 0 3px 3px 0;
+}
