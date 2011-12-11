@@ -114,18 +114,18 @@ h2 {
   font-size: 120%;
 }
 
-section.repository h2 small {
+h2 small {
   display: block;
   font-size: 9px;
 }
 
-section.repository dl {
+dl {
   font-size: 9px;
   text-align: right;
 }
 
-section.repository dl dt,
-section.repository dl dd {
+dl dt,
+dl dd {
   display: inline-block;
   margin: 0;
   padding: 3px 5px;
@@ -133,12 +133,12 @@ section.repository dl dd {
   background-color: whiteSmoke;
 }
 
-section.repository dl dt {
+dl dt {
   margin-right: 1px;
   border-radius: 3px 0 0 3px;
 }
 
-section.repository dl dd {
+dl dd {
   margin-right: 10px;
   border-radius: 0 3px 3px 0;
 }

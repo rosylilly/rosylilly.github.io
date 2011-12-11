@@ -13,6 +13,7 @@ $(function() {
           $('#twitter-tweet').text(data.status.text).attr('href', 'http://twitter.com/rosylilly/status/'+ data.status.id);
         }
       });
+
     $.ajax({
         type: 'GET',
         url: 'https://api.github.com/users/rosylilly/watched',
@@ -20,7 +21,6 @@ $(function() {
         dataType: 'jsonp',
         success: function(data) {
           data = data.data;
-          console.log(data);
           for (var i=0,l=data.length; i<l; i++) {
             var repo = data[i];
             var section = $('<section />').addClass('repository');
@@ -35,5 +35,35 @@ $(function() {
             $('#repos').append(section);
           }
         }
+      });
+
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.github.com/users/rosylilly/gists',
+        cache: false,
+        dataType: 'jsonp',
+        success: function(data) {
+          data = data.data;
+          for (var i=0,l=data.length; i<l; i++) {
+            var snippet = data[i];
+            var section = $('<section />').addClass('snippet');
+            $('#snippets').append(section);
+            section.append($('<h2 />').text(snippet.id).append($('<small />').append($('<a />').text(snippet.html_url).attr('href', snippet.html_url))));
+            section.append($('<p />').text(snippet.description));
+            var meta = $('<dl />').addClass('meta');
+            meta.append('<dt>Last Update</dt>');
+            meta.append($('<dd />').text(snippet.updated_at));
+            section.append(meta);
+          }
+        }
+      });
+
+    $('#body > section:not(:first-child)').fadeOut();
+    $('menu a').click(function(e) {
+        e.preventDefault();
+        var _this = $(this);
+        $('#body > section:visible').fadeOut(function() {
+            $(_this.attr('href')).fadeIn();
+          });
       });
 });
