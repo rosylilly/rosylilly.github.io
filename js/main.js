@@ -16,11 +16,13 @@ $(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://api.github.com/users/rosylilly/watched',
+        url: 'https://api.github.com/users/rosylilly/repos',
         cache: false,
         dataType: 'jsonp',
         success: function(data) {
-          data = data.data;
+          data = data.data.sort(function(a, b) {
+              return Date.parse(b.updated_at) - Date.parse(a.updated_at);
+            });
           for (var i=0,l=data.length; i<l; i++) {
             var repo = data[i];
             var section = $('<section />').addClass('repository');
@@ -30,7 +32,16 @@ $(function() {
             meta.append('<dt>Language</dt>');
             meta.append($('<dd />').text(repo.language || 'any'));
             meta.append('<dt>Last Update</dt>');
-            meta.append($('<dd />').text(repo.updated_at));
+            var date = new Date(Date.parse(repo.updated_at));
+            meta.append($('<dd />').text(
+                [
+                  date.getFullYear(),
+                  ('00' + (date.getMonth() + 1)).replace(/\d+(\d{2})$/, "$1"),
+                  ('00' + date.getDate()).replace(/\d+(\d{2})$/, "$1")
+                ].join('/') + ' ' + [
+                  ('00' + date.getHours()).replace(/\d+(\d{2})$/, "$1"),
+                  ('00' + date.getMinutes()).replace(/\d+(\d{2})$/, "$1")
+                ].join(':')));
             section.append(meta);
             $('#repos').append(section);
           }
@@ -52,7 +63,15 @@ $(function() {
             section.append($('<p />').text(snippet.description));
             var meta = $('<dl />').addClass('meta');
             meta.append('<dt>Last Update</dt>');
-            meta.append($('<dd />').text(snippet.updated_at));
+            var date = new Date(Date.parse(snippet.updated_at));
+            meta.append($('<dd />').text(
+                [
+                  date.getFullYear(),
+                  ('00' + (date.getMonth() + 1)).replace(/\d+(\d{2})$/, "$1"),
+                  ('00' + date.getDate()).replace(/\d+(\d{2})$/, "$1")
+                ].join('/') + ' ' + [
+                  ('00' + date.getHours()).replace(/\d+(\d{2})$/, "$1"), ('00' + date.getMinutes()).replace(/\d+(\d{2})$/, "$1")
+                ].join(':')));
             section.append(meta);
           }
         }
