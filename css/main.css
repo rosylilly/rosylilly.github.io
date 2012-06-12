@@ -1,144 +1,133 @@
-body {
-  margin: 50px auto;
-  width: 700px;
-  font-size: 13px;
-}
-
-a {
-  color: #019AD2;
-}
-
-header {
-  position: relative;
-}
-
-header h1 {
+html {
   margin: 0;
   padding: 0;
-  line-height: 80px;
-  font-size: 24px;
 }
 
-header #twitter-recent-tweet {
+body {
+  margin: 0 auto;
+  padding: 50px 30px;
+  width: 600px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+article {
+}
+
+section {
+  margin: 0;
+  padding: 30px 20px;
+  width: 260px;
+  text-align: right;
+}
+
+section#profile {
+  float: left;
+}
+
+section#profile,
+section#tweets {
+  float: left;
+  margin-right: -1px;
+  border-right: 1px solid #ddd;
+}
+
+section#repositories {
+  float: right;
+  border-left: 1px solid #ddd;
+  width: 259px;
+  text-align: left;
+}
+
+h1 {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 200%;
+}
+
+p.subtitle {
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h2 {
+  position: relative;
+  margin: 1em -20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 100%;
+}
+h2::after {
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
-  margin: 0;
-  padding: 10px;
-  width: 403px;
-  height: 60px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-right: 10px solid #ddd;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
-header #twitter-id,
-header #twitter-tweet {
-  display: block;
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  text-decoration: none;
-  font-size: 14px;
+#repositories h2::after {
+  left: 0;
+  border-right: 10px solid transparent;
+  border-left: 10px solid #ddd;
+  border-bottom: 10px solid transparent;
 }
 
-header #twitter-id {
-  width: 403px;
-  text-indent: 48px;
-}
-
-header #twitter-id img {
-  display: block;
-  position: absolute;
-}
-
-header #twitter-tweet {
-  top: 30px;
-  left: 63px;
-  width: 35em;
-  height: 4em;
-  font-size: 9px;
-}
-
-header menu {
-  margin: 0;
-  padding: 0;
+ul {
   list-style: none outside;
-  background-color: #0084B4;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-header menu li {
-  display: table-cell;
-  margin: 0;
   padding: 0;
-  text-transform: uppercase;
 }
 
-header menu li a {
-  display: block;
-  padding: 5px 10px;
-  text-decoration: none;
-  color: #fff;
-  background-color: #0084B4;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-header menu li a:hover {
-  background-color: #2D2D2D;
+ul li {
+  margin: 1em 0;
+  padding: 0;
 }
 
 footer {
+  display: block;
+  clear: both;
+  padding: 50px 0;
 }
 
 footer address {
   font-style: normal;
   text-align: center;
+  font-size: 9px;
 }
 
-footer address a {
-  text-decoration: none;
+a {
   color: #0084B4;
 }
 
-footer address a+a {
-  padding-left: 0.3em;
-  border-left: 1px solid #0084B4;
+#repositories ul {
+  list-style: disc inside;
 }
 
-section#body {
-  padding: 30px;
-}
-
-h2 {
-  font-size: 120%;
-}
-
-h2 small {
+span.desc,
+span.tweet {
   display: block;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+span.desc {
   font-size: 9px;
+  color: #333;
 }
 
-dl {
-  font-size: 9px;
-  text-align: right;
+.lang-ruby {
+  color: #B92826;
 }
-
-dl dt,
-dl dd {
-  display: inline-block;
-  margin: 0;
-  padding: 3px 5px;
-  color: #0084B4;
-  background-color: whiteSmoke;
+.lang-javascript {
+  color: #6DB14C;
 }
-
-dl dt {
-  margin-right: 1px;
-  border-radius: 3px 0 0 3px;
-}
-
-dl dd {
-  margin-right: 10px;
-  border-radius: 0 3px 3px 0;
+.lang-python {
+  color: #E37729;
 }
