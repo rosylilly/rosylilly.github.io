@@ -42,7 +42,7 @@ $(function(){
         data = datas[i];
         tweetElement = $('<li><span class="tweet" />&mdash; <a>tweet</a></li>');
         tweetElement.find('.tweet').text(data.text);
-        tweetElement.find('a').attr('href', "http://twitetr.com/rosylilly/status/" + data.id_str).html(data.id_str);
+        tweetElement.find('a').attr('href', "http://twitter.com/rosylilly/status/" + data.id_str).html(data.id_str);
         tweetsElement.append(tweetElement);
       }
     }
