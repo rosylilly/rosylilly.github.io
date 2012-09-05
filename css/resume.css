@@ -1,0 +1,107 @@
+html {
+  background: repeat url(../img/whitey.png);
+}
+
+body {
+  position: relative;
+  margin: 30px auto;
+  padding: 10px 40px;
+  width: 700px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+h1 {
+  position: absolute;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 80%;
+  color: #999;
+  top: 0;
+  right: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+p.notice {
+  color: #999;
+  font-size: 50%;
+  text-align: center;
+}
+
+dt {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 60%;
+  width: 60px;
+  text-align: right;
+}
+
+dd {
+  margin: -1em 0 0 70px;
+  padding: 0;
+}
+
+h2 {
+  margin: 10px 0 0.5em -60px;
+  padding: 3px 10px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 100%;
+  border-radius: 5px;
+  line-height: 1.2;
+}
+
+h3::before {
+  content: '> ';
+  color: #999;
+}
+
+h3 time,
+h4 time {
+  display: block;
+  color: #999;
+  font-size: 80%;
+  text-indent: 2em;
+}
+
+div.works {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -moz-column-fill: auto;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  -webkit-column-fill: auto;
+  column-count: 2;
+  column-gap: 20px;
+  column-fill: auto;
+}
+
+section.work {
+ -moz-column-break-inside: avoid;
+ -webkit-column-break-inside: avoid;
+ column-break-inside: avoid; display: inline-block;
+ font-size: 80%;
+}
+
+section.work p {
+  font-size: 90%;
+}
+
+section.work aside.tags span {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  margin-bottom: 0.2em;
+  margin-right: 0.5em;
+  white-space: nowrap;
+  font-size: 80%;
+  background-color: #ddd;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
