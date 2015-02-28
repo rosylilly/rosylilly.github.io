@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>style in body</title>
+
+    <style>
+      span::after {
+        margin-left: 1em;
+        color: red;
+        content: 'head';
+      }
+    </style>
+  </head>
+  <body>
+    <p>via <a href="https://ja.stackoverflow.com/questions/7241/body%E5%86%85%E3%81%ABstyle%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%97%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%8B%95%E4%BD%9C%E4%BB%95%E6%A7%98">Stackoverflow</a></p>
+
+    <p><span>span in body</span></p>
+
+    <style>
+      span::after {
+        content: 'body'
+      }
+    </style>
+
+    <p><span>span in body</span></p>
+
+    <div>
+      <style scoped="scoped">
+        span::after {
+          content: 'div(scoped)';
+        }
+      </style>
+      <p><span>span in div</span></p>
+    </div>
+
+  </body>
+</html>
