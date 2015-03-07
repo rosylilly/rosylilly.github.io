@@ -2,45 +2,55 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Aduca &mdash; a dull canvas</title>
+    <link rel="me" href="https://twitter.com/rosylilly">
+    <link rel="stylesheet" href="css/octicons.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <article>
-      <h1>Aduca</h1>
-      <p class="subtitle">a dull canvas</p>
+    <h1>Aduca</h1>
 
-      <section id="profile">
-        <h2>Profile</h2>
-        <p><b>rosylilly</b> / <b>Sho Kusano</b></p>
-        <ul>
-          <li><a href="http://twitter.com/rosylilly">Twitter: rosylilly</a></li>
-          <li><a href="http://github.com/rosylilly">Github: rosylilly</a></li>
-          <li><a href="http://facebook.com/sho.kusano">Facebook: sho.kusano</a></li>
-          <li><a href="http://rosylilly.hatenablog.com/">Blog: rosylilly</a></li>
-          <li><a href="https://hat.io/users/rosylilly">Portfolio: hat.io</a></li>
-          <li><a href="mailto:rosylilly@aduca.org">Mail: rosylilly@aduca.org</a></li>
-        </ul>
-      </section>
+    <div id="me">
+      <h2 class="name">
+        <ruby class="name">
+          <rb>Sho Kusano</rb>
+          <rp>-</rp>
+          <rt>rosylilly</rt>
+        </ruby>
+      </h2>
 
-      <section id="repositories">
-        <h2>Repositories</h2>
-        <ul>
-        </ul>
-      </section>
+      <ul id="social-account">
+        <li>
+          <a class="twitter-follow-button" href="https://twitter.com/rosylilly" data-show-count="false" data-size="small" data-lang="en">Follow @rosylilly</a>
+        </li>
+        <li>
+          <iframe src="https://ghbtns.com/github-btn.html?user=rosylilly&size=small&type=follow&count=false" frameborder="0" scrolling="0" width="115px" height="20px"></iframe>
+        </li>
+      </ul>
+    </div>
 
-      <section id="tweets">
-        <h2>Recent Tweets</h2>
-        <ul>
-        </ul>
-      </section>
+    <div id="repositories">
+      <div class="repo" v-repeat="repos">
+        <h3>
+          <a href="{{ html_url }}" target="_blank">
+            {{ name }}
+          </a>
+        </h3>
+        <dl>
+          <dt><span class="octicon octicon-star"></span></dt>
+          <dd>{{ stargazers_count }}</dd>
+          <dt><span class="octicon octicon-eye"></span></dt>
+          <dd>{{ watchers }}</dd>
+          <dt><span class="octicon octicon-repo-forked"></span></dt>
+          <dd>{{ forks }}</dd>
+        </dl>
+        <p class="description">{{ description }}</p>
+      </div>
+    </div>
 
-      <footer>
-        <address>Sho Kusano / <a href="mailto:rosylilly@aduca.org">rosylilly@aduca.org</a></address>
-      </footer>
-    </article>
-
-  <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="application/javascript" src="js/main.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/repos.js"></script>
   </body>
 </html>
