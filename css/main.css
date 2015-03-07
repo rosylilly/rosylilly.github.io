@@ -18,12 +18,12 @@ h1 {
 #me, #repositories {
   position: absolute;
   margin: 0;
-  padding: 50px;
   top: 0;
   bottom: 0;
 }
 
 #me {
+  padding: 50px;
   left: 0;
   width: 330px;
   background-color: #efefef;
@@ -54,7 +54,7 @@ h1 {
 }
 
 #repositories .repo {
-  padding: 0 20px;
+  padding: 50px;
   float: left;
   width: 33%;
   height: 200px;

@@ -11,24 +11,31 @@ Zepto(function($) {
     }
   });
 
-  $.ajax({
-    type: 'GET',
-    url: SRC_URL,
-    dataType: 'json',
-    data: {
-      sort: 'pushed',
-      type: 'owner',
-      per_page: 300
-    },
-    beforeSend: function(xhr) {
-      xhr.setRequestHeader ("Authorization", "Basic " + btoa(BASIC_AUTH));
-    },
-    success: function(data) {
-      reposView.repos = $.map(data, function(repo, i) {
-        return repo
-      });
-    }
-  });
+  reposView.getRepos = function(page) {
+    $.ajax({
+      type: 'GET',
+      url: SRC_URL,
+      dataType: 'json',
+      data: {
+        sort: 'pushed',
+        type: 'owner',
+        page: page,
+        per_page: 100
+      },
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader ("Authorization", "Basic " + btoa(BASIC_AUTH));
+      },
+      success: function(data) {
+        reposView.repos = reposView.repos.concat(data);
+
+        if(data.length >= 100) {
+          reposView.getRepos(page + 1);
+        }
+      }
+    });
+  }
+
+  reposView.getRepos(0);
 
   window.reposView = reposView;
 });
