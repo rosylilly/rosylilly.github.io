@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Local storage</title>
+  </head>
+  <body>
+    <p>Local Storage Test: <span id="counter"></span></p>
+    <div>
+      <button id="incr">INCR</button>
+      <button id="decr">DECR</button>
+      <button id="zero">ZERO</button>
+    </div>
+    <script>
+      if(window.localStorage) {
+        let counter = localStorage.getItem('counter');
+        if (!counter) {
+          counter = 0;
+        }
+
+        function update() {
+          const dom = document.getElementById('counter');
+          dom.innerText = counter;
+          localStorage.setItem('counter', counter);
+        }
+        update();
+
+        document.getElementById('incr').addEventListener('click', (e) => {
+          e.preventDefault();
+          counter++;
+          update();
+        })
+        document.getElementById('decr').addEventListener('click', (e) => {
+          e.preventDefault();
+          counter--;
+          update();
+        })
+        document.getElementById('zero').addEventListener('click', (e) => {
+          e.preventDefault();
+          counter = 0;
+          update();
+        })
+
+      }
+    </script>
+  </body>
